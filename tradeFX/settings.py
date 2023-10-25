@@ -18,6 +18,8 @@ DEBUG = False
 ALLOWED_HOSTS = ['.vercel.app', 'now.sh', '127.0.0.1', 'localhost', 'https://tradefx-9a3b9c58de68.herokuapp.com/']
 
 
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tradeFX.settings')
+
 # Application definition
 
 INSTALLED_APPS = [
