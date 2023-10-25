@@ -4,7 +4,7 @@
   "builds": [
     {
       "src": "tradeFX/asgi.py",
-      "use": "@vercel/python",
+      "use": "@vercel/asgi",
       "config": {"maxLambdaSize": "15mb", "runtime": "python3.11.4"}
     },
     {
