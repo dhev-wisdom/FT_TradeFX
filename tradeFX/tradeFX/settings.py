@@ -9,7 +9,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = "django-insecure-w936r*4(98*i3l=%z5qm^mll5j=@zq4@7y=_rr1fq+5^8q8n2n"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -100,7 +101,7 @@ DATABASES = {
         'NAME': 'TradeFX_',
         'ENFORCE_SCHEMA': True,
         'CLIENT': {
-            'host': host
+            'host': "mongodb+srv://Whitzy:Wisdom20032000@clusterdjangodashboard.bji8ruu.mongodb.net/?retryWrites=true&w=majority",
         }  
     }
 }
