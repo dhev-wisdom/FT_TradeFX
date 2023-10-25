@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<script type="application/x-javascript">
+    addEventListener("load", function() { 
+        setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1);
+    }
+</script>
+<link href="{% static 'css/login.css' %}" rel="stylesheet" type="text/css" media="all" />
+{% endblock css %}
+
+{% block title %}
+<title>Sign up - tradeFX</title>
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="main-w3layouts wrapper">
+    <h1 class="text-white">SIGNUP TO TRADEFX</h1>
+    <div class="main-agileinfo">
+        <div class="agileits-top">
+            <form method="post" class="text-white">
+                {% csrf_token %}
+                {{ form.as_p }}
+                
+                <input type="submit" value="SIGNUP">
+            </form>
+            <p>Already have an Account? <a href="{% url 'login' %}"> Login Now!</a></p>
+        </div>
+    </div>
+
+    <div class="colorlibcopy-agile">
+        <p style="color: #fff; font-weight: 600;">&copy; 2023 Dev-Wisdom</p>
+    </div>
+    
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+{% endblock content %}

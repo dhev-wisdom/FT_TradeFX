@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/exchange.svg' %}">
+    {% block css %}
+
+    {% endblock css %}
+
+    {% block title %}
+    <title>tradeFX Base</title>
+    {% endblock title %}
+</head>
+<body style="margin: 0; padding: 0; overflow-x: hidden; position: relative; font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;">
+
+    {% include 'navbar.html' %}
+
+    <div style="padding: 0 2rem;">
+    {% block content %}
+    
+    {% endblock content %}
+    </div>
+    
+    {% block footer %}
+
+    {% endblock footer %}
+
+    {% block js %}
+
+    {% endblock js %}
+    
+</body>
+</html>

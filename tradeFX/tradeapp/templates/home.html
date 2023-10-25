@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Home - tradeFX</title>
+{% endblock title %}
+
+{% block content %}
+
+<h1 style="margin: 4rem 0">Welcome to TradeFX!</h1>
+<p>What do you which to do today?</p>
+<ul style="list-style: none;">
+    <li style="margin-bottom: .5rem;"><a href="{% url 'admin-dashboard' %}" style="color: rgb(12, 99, 99); text-decoration: none;">Visit Admin Dashboard</a></li>
+    <li><a href="{% url 'user-dashboard' 1 %}" style="color: rgb(12, 99, 99); text-decoration: none;">Visit User Dashboard</a></li>
+</ul>
+{% endblock content %}
+
+{% block footer %}
+
+    {% include 'footer.html' %}
+
+{% endblock footer %}

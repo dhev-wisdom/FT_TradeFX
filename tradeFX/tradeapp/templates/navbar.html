@@ -1,0 +1,14 @@
+<nav style="background-color: rgb(75, 192, 192); padding: 2rem 1rem; margin: 0;">
+    <ul style="list-style: none; display: flex; max-width: 100%; padding: 0 2rem; margin: 0;">
+        <li style="margin-right: auto;">
+            <a href="{% url 'home' %}" style="color: #fff; text-decoration: none; font-weight: bold; font-size: larger;">TradeFX</a>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li style="color: #fff; margin-right: 50px; font-size: large;">Welcome {{request.user.username|title}}</li>
+        <li><a href="{% url 'logout' %}" style="color: #fff; text-decoration: none; font-size: large;">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}" style="color: #fff; text-decoration: none; margin-right: 25px;">Login</a></li>
+        <li><a href="{% url 'signup' %}" style="color: #fff; text-decoration: none;">Signup</a></li>
+        {% endif %}
+    </ul>
+</nav>

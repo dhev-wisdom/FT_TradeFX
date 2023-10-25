@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<script type="application/x-javascript">
+    addEventListener("load", function() { 
+        setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1);
+    }
+</script>
+<link href="{% static 'css/login.css' %}" rel="stylesheet" type="text/css" media="all" />
+{% endblock css %}
+
+{% block title %}
+<title>Login - tradeFX</title>
+{% endblock title %}
+
+{% block content %}
+
+
+<!-- <form style="margin: 2rem auto auto; padding: 30px; border: 1px solid black; border-radius: 20px;" method="post">
+    {% csrf_token %}
+    <h1>Login to TradeFX</h1>
+    <div>
+        <label for="">Usrname
+            <input type="email" placeholder="Enter your email" required>
+        </label>
+    </div>
+    <div>
+        <label for="">Password
+            <input type="password" placeholder="Enter your password" required>
+        </label>
+    </div>
+    
+    <input type="submit" value="Login">
+    <p><a href="">Forgot password?</a></p>
+    <p>Don't have an account yet? <a href="{% url 'signup' %}">Sign up</a></p>
+</form> -->
+
+
+<div class="main-w3layouts wrapper">
+    <h1 class="text-white">LOGIN TO TRADEFX</h1>
+    <div class="main-agileinfo">
+        <div class="agileits-top">
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="username" id="username" placeholder="Username" required="">
+                
+                <input type="password" name="password" id="password" placeholder="Password" required="">
+                {% if error %}
+                <p style="margin-top: 1rem;">Incorrect credentials</p>
+                {% endif %}
+
+                <input type="submit" value="LOGIN">
+            </form>
+            <p>Don't have an Account? <a href="{% url 'signup' %}"> Sign Up</a></p>
+        </div>
+    </div>
+
+    <div class="colorlibcopy-agile">
+        <p style="color: #fff; font-weight: 600;">&copy; 2023 Dev-Wisdom</p>
+    </div>
+
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+{% endblock content %}
