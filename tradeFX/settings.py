@@ -24,7 +24,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tradeFX.settings')
 
 INSTALLED_APPS = [
     'daphne',
-    'tradeapp',
     'djongo',
     'channels',
     'django.contrib.admin',
@@ -34,6 +33,7 @@ INSTALLED_APPS = [
     'django_crontab',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tradeapp',
     # "whitenoise.runserver_nostatic",
 ]
 
