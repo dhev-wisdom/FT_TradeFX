@@ -1,1 +1,2 @@
 venv
+<link rel="shortcut icon" href="{% static 'images/exchange.svg' %}">
