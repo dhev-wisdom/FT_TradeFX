@@ -1,5 +1,10 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+import django_heroku
+import channels.layers
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,10 +15,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ.get("SECRET_KEY")
-SECRET_KEY = "django-insecure-w936r*4(98*i3l=%z5qm^mll5j=@zq4@7y=_rr1fq+5^8q8n2n"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', 'now.sh', '127.0.0.1', 'localhost', 'https://tradefx-9a3b9c58de68.herokuapp.com/']
 
@@ -23,9 +28,9 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tradeFX.settings')
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'daphne',
     'djongo',
-    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -103,25 +108,25 @@ DATABASES = {
         'NAME': 'TradeFX_',
         'ENFORCE_SCHEMA': True,
         'CLIENT': {
-            'host': "mongodb+srv://Whitzy:Wisdom20032000@clusterdjangodashboard.bji8ruu.mongodb.net/?retryWrites=true&w=majority",
+            'host': os.environ.get("HOST"),
         }  
     }
 }
 
-# CHANNEL_LAYERS = {
-#     'default': {
-#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
-#         'CONFIG': {
-#             "hosts": [("127.0.0.1", 6379)],
-#         },
-#     },
-# }
-
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [("127.0.0.1", 6379)],
+        },
     },
 }
+
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels.layers.InMemoryChannelLayer',
+#     },
+# }
 
 
 # Password validation
@@ -165,6 +170,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+MEDIA_ROOT = BASE_DIR / "static/images"
 # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 # Default primary key field type
