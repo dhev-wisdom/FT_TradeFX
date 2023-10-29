@@ -9,9 +9,9 @@ class TraderConsumer(AsyncWebsocketConsumer):
         await self.accept()
         print("connected")
         await self.send_initial_trader_data()
-        print("initial send data fn called")
+        # print("initial send data fn called")
         await self.start_periodic_updates()
-        print("periodic updates fn called")
+        # print("periodic updates fn called")
 
     async def disconnect(self, close_code):
         print(f"WebSocket disconnected with close code: {close_code}")
@@ -30,7 +30,7 @@ class TraderConsumer(AsyncWebsocketConsumer):
             'type': 'trader_data',
             'data': trader_data,
         }))
-        print("send trader data fn called")
+        # print("send trader data fn called")
 
     async def start_periodic_updates(self):
         while True:
@@ -52,12 +52,12 @@ class TraderConsumer(AsyncWebsocketConsumer):
                 'balance': str(trader.balance)
             } 
             for trader in traders]
-        print("fetch trader data fn called")
+        # print("fetch trader data fn called")
         return trader_data
 
     async def websocket_receive(self, event):
         message_type = event.get("type")
-        print("frontend message received and message type dtected")
+        # print("frontend message received and message type dtected")
 
         if message_type == "websocket.receive":
             message_text = event.get("text", "")
