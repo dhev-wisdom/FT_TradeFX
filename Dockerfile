@@ -14,4 +14,4 @@ RUN echo "        'hosts': ['redis://redis:6379']," >> settings.py
 RUN echo "    }," >> settings.py
 
 COPY . /app
-CMD ["daphne", "-b", "0.0.0.0:8000", "tradeapp.asgi:application"]
+CMD ["daphne", "-b", "0.0.0.0:8000", "tradeFX.asgi:application"]
