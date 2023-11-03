@@ -1,3 +1,6 @@
+import django
+django.setup()
+
 from .models import Trader
 from django.utils import timezone, timesince
 import random
