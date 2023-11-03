@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import django_heroku
 import channels.layers
 
 load_dotenv()
