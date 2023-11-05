@@ -10,7 +10,9 @@ cryptography==41.0.4
 daphne==4.0.0
 dj-database-url==2.1.0
 Django==4.1.12
+django-cidr-allowed-hosts==1.0.3
 django-crontab==0.7.1
+django-heroku==0.3.1
 djongo==1.3.6
 dnspython==2.4.2
 hyperlink==21.0.0
