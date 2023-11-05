@@ -19,7 +19,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', 'now.sh', '127.0.0.1', 'localhost', 'https://tradefx-9a3b9c58de68.herokuapp.com/', '.onrender.com']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost', 'https://tradefx-9a3b9c58de68.herokuapp.com/', '.onrender.com']
 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tradeFX.settings')
@@ -27,8 +27,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tradeFX.settings')
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
-    'daphne',
     'djongo',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tradeapp',
+    'channels',
     # "whitenoise.runserver_nostatic",
 ]
 
@@ -71,7 +70,7 @@ ROOT_URLCONF = 'tradeFX.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,9 +83,9 @@ TEMPLATES = [
     },
 ]
 
-ASGI_APPLICATION = 'tradeFX.asgi.application'
-
 WSGI_APPLICATION = 'tradeFX.wsgi.application'
+
+ASGI_APPLICATION = 'tradeFX.asgi.application'
 
 
 # Database
@@ -172,7 +171,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_ROOT = BASE_DIR / "static/images"
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
