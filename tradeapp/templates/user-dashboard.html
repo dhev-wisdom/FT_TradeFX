@@ -45,7 +45,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-    const url = 'ws://' + window.location.host + '/ws/admin-dashboard/';
+    const url = 'wss://' + window.location.host + '/wss/admin-dashboard/';
     const socket = new WebSocket(url);
     let traderID = 10;
     const form_ = document.getElementById("traderForm");
