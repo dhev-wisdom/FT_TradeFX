@@ -19,7 +19,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost', 'https://tradefx-9a3b9c58de68.herokuapp.com/', '.onrender.com']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost', 'https://tradefx-9a3b9c58de68.herokuapp.com/', 'https://ft9ja-eazb.onrender.com']
 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tradeFX.settings')
