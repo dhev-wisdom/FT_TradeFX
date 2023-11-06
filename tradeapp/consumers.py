@@ -9,9 +9,9 @@ class TraderConsumer(AsyncWebsocketConsumer):
         await self.accept()
         print("connected")
         await self.send_initial_trader_data()
-        # print("initial send data fn called")
+        print("initial send data fn called")
         await self.start_periodic_updates()
-        # print("periodic updates fn called")
+        print("periodic updates fn called")
 
     async def disconnect(self, close_code):
         print(f"WebSocket disconnected with close code: {close_code}")
