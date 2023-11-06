@@ -19,7 +19,7 @@ os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 
 
 application = ProtocolTypeRouter({
-    "https": django_asgi_app,
+    "http": django_asgi_app,
     "websocket": AuthMiddlewareStack(
         URLRouter([
             path("wss/admin-dashboard/", TraderConsumer.as_asgi()),
