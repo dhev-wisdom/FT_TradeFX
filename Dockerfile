@@ -16,4 +16,8 @@ COPY static /app/static
 
 RUN python manage.py collectstatic --noinput
 
+RUN echo "* * * * * python3 manage.py tradeapp.simulate.simulate_profit_loss" >> crontab
+
+RUN crontab crontab
+
 CMD ["daphne", "-b", "0.0.0.0", "tradeFX.asgi:application"]

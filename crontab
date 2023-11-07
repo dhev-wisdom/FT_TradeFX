@@ -1,0 +1,1 @@
+*/1 * * * * python manage.py tradeapp.simulate.simulate_profit_loss
